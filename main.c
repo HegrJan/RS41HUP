@@ -291,9 +291,9 @@ void send_morse_message(void) {
   if (SEND_MORSE_WWL)
     messageLength += sprintf(buffer + messageLength, " IN %s", locator);
   if (SEND_MORSE_HEIGHT)
-    messageLength += sprintf(buffer + messageLength, " ASL %ld", (gpsData.alt_raw / 1000));
+    messageLength += sprintf(buffer + messageLength, " ASL %ldm", (gpsData.alt_raw / 1000));
   if (SEND_MORSE_VOLTAGE)
-    messageLength += sprintf(buffer + messageLength, " BAT %d.%02d", voltage/100, voltage-voltage/100*100);
+    messageLength += sprintf(buffer + messageLength, " BAT %d.%02dV", voltage/100, voltage-voltage/100*100);
   messageLength += sprintf(buffer + messageLength, "%s", MORSE_SUFFIX);
 
   // Set CW offset
